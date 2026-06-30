@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: absenteeism-api
+  labels:
+    app: absenteeism-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: absenteeism-api
+  template:
+    metadata:
+      labels:
+        app: absenteeism-api
+    spec:
+      containers:
+        - name: absenteeism-api
+          image: ishreyadev/absenteeism-api:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: absenteeism-api-config
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 20
