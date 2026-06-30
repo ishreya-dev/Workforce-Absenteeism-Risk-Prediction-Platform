@@ -7,7 +7,7 @@
 ![BigQuery](https://img.shields.io/badge/BigQuery-Cloud%20DW-669DF6?logo=googlecloud&logoColor=white)
 ![scikit--learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white)
 ![Kafka](https://img.shields.io/badge/Kafka-Streaming-231F20?logo=apachekafka&logoColor=white)
-![CI](https://github.com/ishreya-dev/workforce-absenteeism-risk-platform/actions/workflows/ci.yml/badge.svg)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Passing-2088FF?logo=githubactions&logoColor=white)](https://github.com/ishreya-dev/Workforce-Absenteeism-Risk-Prediction-Platform/actions)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 An end-to-end data science platform that predicts excessive-absenteeism risk for
@@ -139,15 +139,15 @@ absenteeism-risk-platform/
 
 ### CI/CD
 
-A GitHub Actions CI pipeline automatically validates every push and pull request to the `main` branch by:
+<img width="1902" height="855" alt="Screenshot 2026-06-30 220524" src="https://github.com/user-attachments/assets/46c1fbbd-9582-4578-9347-760a1ffaa7bd" />
 
-- Installing project dependencies
-- Verifying core project imports
+GitHub Actions automatically validates every push and pull request by:
+
+- Installing dependencies
+- Verifying project imports
 - Starting the FastAPI application
 - Validating the `/health` endpoint
 - Building the Docker image
-
-Deployment to Kubernetes is currently performed manually.
 
 
 ## Running It Locally
